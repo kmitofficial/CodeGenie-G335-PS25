@@ -62,7 +62,7 @@ Welcome to **CodeGenie**, an intelligent **VS Code extension** that brings the p
 
 DeepSeek-Coder is released under a **permissive open-source license**, allowing unrestricted use for research and commercial applications.  
 
-🔗 **GitHub Repository:** [DeepSeek-Coder](https://github.com)  
+🔗 **GitHub Repository:** [DeepSeek-Coder](https://github.com/deepseek-ai/DeepSeek-Coder)  
 
 ---
 

@@ -3,7 +3,7 @@ Repo for CodeGenie PS project
 
 # 🚀 CodeGenie – Your AI-Powered Coding Assistant  
 
-## 📌 Introduction  
+# 📌 Introduction  
 Welcome to **CodeGenie**, an intelligent **VS Code extension** that brings the power of AI-driven **code generation** right into your workflow! Powered by **DeepSeek Coder** and accelerated by an **RTX 4090 GPU**, this extension provides **real-time** code suggestions, **autocompletions**, and **context-aware snippets**, making development faster, smarter, and more efficient.  
 
 ---
@@ -28,12 +28,12 @@ Welcome to **CodeGenie**, an intelligent **VS Code extension** that brings the p
 ---
 
 
-## Architecture Diagram
+# 🚀 Architecture Diagram
 ![Architecture Diagram](./images/ArchitectureDiagram.png)
 
-## WorkFlow
+# 🧠 WorkFlow
 ![Workflow](./images/Workflow.png)
-## 📖 Brief Explanation of the Reference Research Papers  
+# 📖 Brief Explanation of the Reference Research Papers  
 
 ### 🔬 DeepSeek-Coder: Open-Source Large Language Models for Code Intelligence  
 

@@ -1,6 +1,3 @@
-# CodeGenie-G335-PS25
-Repo for CodeGenie PS project
-
 # 🚀 CodeGenie – Your AI-Powered Coding Assistant  
 
 # 📌 Introduction  
@@ -29,10 +26,10 @@ Welcome to **CodeGenie**, an intelligent **VS Code extension** that brings the p
 
 
 # 🚀 Architecture Diagram
-![Architecture Diagram](./images/ArchitectureDiagram.png)
+![Architecture Diagram](images/ArchitectureDiagram.png)
 
 # 🧠 WorkFlow
-![Workflow](./images/Workflow.png)
+![Workflow](images/Workflow.png)
 # 📖 Brief Explanation of the Reference Research Papers  
 
 ### 🔬 DeepSeek-Coder: Open-Source Large Language Models for Code Intelligence  

@@ -1,0 +1,24 @@
+{
+    "name": "vscode-extension",
+    "displayName": "VSCode Extension",
+    "description": "A basic VS Code extension that invokes a REST API endpoint.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.75.0"
+    },
+    "activationEvents": [
+        "onCommand:extension.fetchData"
+    ],
+    "main": "./src/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.fetchData",
+                "title": "Fetch Data from API"
+            }
+        ]
+    },
+    "dependencies": {
+        "axios": "^1.8.4"
+    }
+}

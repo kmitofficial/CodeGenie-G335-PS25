@@ -17,12 +17,12 @@
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
-      {
-        "command": "code-genie.helloWorld",
-        "title": "Hello World"
-      }
+        {
+            "command": "codeGenie.start",
+            "title": "Start CodeGenie"
+        }
     ]
-  },
+},
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",

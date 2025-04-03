@@ -61,6 +61,32 @@ DeepSeek-Coder is released under a **permissive open-source license**, allowing 
 
 🔗 **GitHub Repository:** [DeepSeek-Coder](https://github.com/deepseek-ai/DeepSeek-Coder)  
 
+
+### Requirements and Instructions
+
+- **requirements.txt** -Initially install all the requirements from requirements.txt using the command pip install requirements.txt
+- **download_model.sh** -Refer to the scripts/download_model.sh file to ensure the download of Deepseek Instruct 1.3b instruct model.
+
+### Contributors
+
+- **Vishesh Gupta** : https://github.com/gupvishesh
+- **G Shruthi** : https://github.com/Shruthi280
+- **MKN Sai Varun** : https://github.com/MKN-Sai-Varun
+- **Kallem Preetham Reddy** : https://github.com/K-Preetham-Reddy
+- **Palak Jain** : https://github.com/Palakjain1234
+- **Patel Sharanya** : https://github.com/PatelSharanya
+- **Pranav Kasanagottu** : https://github.com/PranavKasanagottu
+
+### Reference Videos
+
+- **Vishesh Gupta** : https://youtu.be/oYhpkxAc-kk?si=VOfd-vNPcvayipcp
+- **G Shruthi** : https://youtu.be/TrgejCfHIYM
+- **MKN Sai Varun** : https://youtu.be/5o33Pr5BzqI?si=QGFA3ZaWLsBPTrDi
+- **Kallem Preetham Reddy** : https://www.youtube.com/watch?v=-OCLX3o41y0
+- **Palak Jain** : https://youtu.be/kSF9GxOHq9w?si=ig1mN9SizxQTVeCt
+- **Patel Sharanya** : https://www.youtube.com/watch?v=MSq8f-T1dxw
+- **Pranav Kasanagottu** : https://www.youtube.com/watch?v=bbtxZsi9YKw
+
 ---
 
 🔥 Get ready to build the future of **AI-powered development** with **CodeGenie**! 🚀  

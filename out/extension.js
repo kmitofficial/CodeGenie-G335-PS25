@@ -197,7 +197,8 @@ function activate(context) {
     let currentSuggestion = '';
     const suggestionDecoration = vscode.window.createTextEditorDecorationType({
         after: {
-            color: '#6A9955',
+            //color: '#6A9955',
+            color: '#F8F8FF',
             fontStyle: 'italic',
         },
         rangeBehavior: vscode.DecorationRangeBehavior.ClosedClosed,
@@ -278,6 +279,53 @@ function activate(context) {
             clearSuggestion(editor);
         }
     }));
+    // let debounceTimer: NodeJS.Timeout | undefined;
+    // let lastLineContent = "";
+    // context.subscriptions.push(
+    //     vscode.workspace.onDidChangeTextDocument(async (event) => {
+    //         const editor = vscode.window.activeTextEditor;
+    //         if (!editor || event.document !== editor.document) return;
+    //         if (isInsertingSuggestion) return;
+    //         const changes = event.contentChanges;
+    //         const position = editor.selection.active;
+    //         const line = editor.document.lineAt(position.line);
+    //         const currentLineText = line.text;
+    //         // Cancel suggestion if Enter was pressed
+    //         if (changes.some(change => change.text.includes('\n'))) {
+    //             clearSuggestion(editor);
+    //             return;
+    //         }
+    //         // Only show suggestion if cursor is at end of the line
+    //         if (position.character !== currentLineText.length) {
+    //             clearSuggestion(editor);
+    //             return;
+    //         }
+    //         // Don't suggest if line is empty
+    //         if (currentLineText.trim() === "") {
+    //             clearSuggestion(editor);
+    //             return;
+    //         }
+    //         // Debounce logic to wait before fetching suggestion
+    //         if (debounceTimer) clearTimeout(debounceTimer);
+    //         debounceTimer = setTimeout(async () => {
+    //             const newPosition = editor.selection.active;
+    //             const updatedLineText = editor.document.lineAt(newPosition.line).text.trim();
+    //             // If line hasn't changed, don't request again
+    //             if (updatedLineText === lastLineContent) return;
+    //             lastLineContent = updatedLineText;
+    //             const textUptoCursor = editor.document.getText(
+    //                 new vscode.Range(new vscode.Position(0, 0), newPosition)
+    //             );
+    //             const suggestion = await getGhostCompletion(textUptoCursor);
+    //             if (editor === vscode.window.activeTextEditor && suggestion) {
+    //                 currentSuggestion = suggestion;
+    //                 showSuggestion(editor, currentSuggestion);
+    //             } else if (editor === vscode.window.activeTextEditor) {
+    //                 clearSuggestion(editor);
+    //             }
+    //         }, 400); // debounce delay
+    //     })
+    // );
     // Function to handle fill in the middle
     // async function getMiddleFill(text: string): Promise<string> { 
     //     try { 

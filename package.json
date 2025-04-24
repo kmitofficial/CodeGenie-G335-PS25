@@ -17,12 +17,41 @@
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
-        {
-            "command": "codeGenie.start",
-            "title": "Start CodeGenie"
-        }
+      {
+        "command": "code-genie.start",
+        "title": "Start CodeGenie"
+      },
+      {
+        "command": "code-genie.acceptGhostSuggestion",
+        "title": "Accept Ghost Suggestion"
+      },
+      {
+        "command": "code-genie.complete",
+        "title": "Complete Code with CodeGenie"
+      },
+      {
+        "command": "code-genie.fillInTheMiddle",
+        "title": "Fill Code Gaps with CodeGenie"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "code-genie.complete",
+        "key": "ctrl+alt+c",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "code-genie.acceptGhostSuggestion",
+        "key": "tab",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "code-genie.fillInTheMiddle",
+        "key": "ctrl+alt+8",
+        "when": "editorTextFocus"
+      }
     ]
-},
+  },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
@@ -44,5 +73,8 @@
     "@vscode/test-electron": "^2.4.1",
     "eslint": "^9.19.0",
     "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "cross-fetch": "^4.1.0"
   }
 }

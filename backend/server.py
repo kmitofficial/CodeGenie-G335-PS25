@@ -185,6 +185,59 @@ def hf_complete():
     except Exception as e:
         return error_response(f"Error in /hf-complete: {str(e)}", 500)
 
+# Endpoint 4: /fill_in_the_middle (uses 'text')
+@app.route("/fill_in_the_middle", methods=["POST"])
+def fill_in_the_middle():
+    try:
+        # Check model availability
+        model_ready, error_msg, status_code = ensure_model()
+        if not model_ready:
+            return error_msg, status_code
+            
+        # Validate request format
+        if not request.is_json:
+            return error_response("Invalid content type. Expected application/json")
+            
+        data = request.get_json()
+        if not isinstance(data, dict) or 'text' not in data:
+            return error_response('Missing or invalid "text" field in request')
+            
+        input_text = data['text'].strip()
+        if not input_text:
+            return error_response('Empty input text')
+            
+        # Create a better prompt for the fill-in-the-middle task
+        prompt = (
+            f"{input_text}\n\n"
+            "----Complete the code by filling in any gaps or implementing missing functionality.\n"
+            "Focus only on providing the missing parts that would make this code more complete.\n"
+            "Do not give any other extra block of code, just the the present code which contains the filled missing code "
+        )
+        
+        logger.info(f"Processing /fill_in_the_middle request for input length: {len(input_text)}")
+
+        # Generate completion
+        with torch.no_grad():
+            inputs = tokenizer(prompt, return_tensors="pt").to(device)
+            outputs = model.generate(
+                **inputs,
+                max_new_tokens=500,
+                temperature=0.7,
+                top_p=0.95,
+                do_sample=True,
+                pad_token_id=tokenizer.eos_token_id
+            )
+            completion = tokenizer.decode(outputs[0][inputs['input_ids'].shape[1]:], skip_special_tokens=True)
+            
+            # Check if we just got back something too similar to the input
+            if completion.strip() == input_text.strip():
+                completion = "// No additional code needed"
+
+        logger.info(f"Generated fill-in-the-middle completion of length: {len(completion)}")
+        return jsonify({'completion': completion})
+
+    except Exception as e:
+        return error_response(f"Error in /fill_in_the_middle: {str(e)}", 500)
 
 # Add health check endpoint
 @app.route("/health", methods=["GET"])

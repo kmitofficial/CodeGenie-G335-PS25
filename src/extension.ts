@@ -38,7 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     // Command to get code completion
     let completeDisposable = vscode.commands.registerCommand('code-genie.complete', () => {
-        console.log("Command code-genie.complete executed.");
+        console.log("Command codegenie.complete executed.");
         const editor = vscode.window.activeTextEditor;
         if (editor) {
             handleCompletion(editor);
@@ -48,46 +48,46 @@ export function activate(context: vscode.ExtensionContext) {
     });
 
     // Command for filling in the middle
-    // let fillMiddleDisposable = vscode.commands.registerCommand('codegenie.fillInTheMiddle', async () => {
-    //     const editor = vscode.window.activeTextEditor;
-    //     if (!editor) {
-    //         vscode.window.showInformationMessage("No active editor found.");
-    //         return;
-    //     }
+    let fillMiddleDisposable = vscode.commands.registerCommand('code-genie.fillInTheMiddle', async () => {
+        const editor = vscode.window.activeTextEditor;
+        if (!editor) {
+            vscode.window.showInformationMessage("No active editor found.");
+            return;
+        }
         
-    //     const document = editor.document;
-    //     const selection = editor.selection;
+        const document = editor.document;
+        const selection = editor.selection;
         
-    //     // Get selected text or text from the start to the cursor
-    //     let text = selection.isEmpty
-    //         ? document.getText(new vscode.Range(new vscode.Position(0, 0), selection.active))
-    //         : document.getText(selection);
+        // Get selected text or text from the start to the cursor
+        let text = selection.isEmpty
+            ? document.getText(new vscode.Range(new vscode.Position(0, 0), selection.active))
+            : document.getText(selection);
         
-    //     // Show error if there's no text to work with
-    //     if (!text.trim()) {
-    //         vscode.window.showErrorMessage("No text selected or before cursor to fill.");
-    //         return;
-    //     }
+        // Show error if there's no text to work with
+        if (!text.trim()) {
+            vscode.window.showErrorMessage("No text selected or before cursor to fill.");
+            return;
+        }
         
-    //     // Update status bar
-    //     updateStatusBar("Generating middle fill...");
+        // Update status bar
+        updateStatusBar("Generating middle fill...");
         
-    //     // Get result from your custom middle-fill function
-    //     const result = await getMiddleFill(text);
+        // Get result from your custom middle-fill function
+        const result = await getMiddleFill(text);
         
-    //     // Insert result only if editor is still active and result is available
-    //     if (result && editor === vscode.window.activeTextEditor) {
-    //         editor.edit(editBuilder => {
-    //             editBuilder.insert(selection.end, result);
-    //         });
-    //     }
+        // Insert result only if editor is still active and result is available
+        if (result && editor === vscode.window.activeTextEditor) {
+            editor.edit(editBuilder => {
+                editBuilder.insert(selection.end, result);
+            });
+        }
         
-    //     // Hide status bar
-    //     hideStatusBar();
-    // });
+        // Hide status bar
+        hideStatusBar();
+    });
 
-    //context.subscriptions.push(startDisposable, completeDisposable, fillMiddleDisposable);
-    context.subscriptions.push(startDisposable, completeDisposable)
+    context.subscriptions.push(startDisposable, completeDisposable, fillMiddleDisposable);
+
     // Status bar management functions
     function updateStatusBar(message: string) {
         statusBarItem.text = `$(sync~spin) ${message}`;
@@ -188,8 +188,7 @@ export function activate(context: vscode.ExtensionContext) {
     let currentSuggestion = '';
     const suggestionDecoration = vscode.window.createTextEditorDecorationType({
         after: {
-            //color: '#6A9955',
-            color : '#F8F8FF',
+            color : '#C6C6CA',
             fontStyle: 'italic',
         },
         rangeBehavior: vscode.DecorationRangeBehavior.ClosedClosed,
@@ -281,99 +280,40 @@ export function activate(context: vscode.ExtensionContext) {
         })
     );
 
-    // let debounceTimer: NodeJS.Timeout | undefined;
-    // let lastLineContent = "";
-
-    // context.subscriptions.push(
-    //     vscode.workspace.onDidChangeTextDocument(async (event) => {
-    //         const editor = vscode.window.activeTextEditor;
-    //         if (!editor || event.document !== editor.document) return;
-
-    //         if (isInsertingSuggestion) return;
-
-    //         const changes = event.contentChanges;
-    //         const position = editor.selection.active;
-    //         const line = editor.document.lineAt(position.line);
-    //         const currentLineText = line.text;
-
-    //         // Cancel suggestion if Enter was pressed
-    //         if (changes.some(change => change.text.includes('\n'))) {
-    //             clearSuggestion(editor);
-    //             return;
-    //         }
-
-    //         // Only show suggestion if cursor is at end of the line
-    //         if (position.character !== currentLineText.length) {
-    //             clearSuggestion(editor);
-    //             return;
-    //         }
-
-    //         // Don't suggest if line is empty
-    //         if (currentLineText.trim() === "") {
-    //             clearSuggestion(editor);
-    //             return;
-    //         }
-
-    //         // Debounce logic to wait before fetching suggestion
-    //         if (debounceTimer) clearTimeout(debounceTimer);
-    //         debounceTimer = setTimeout(async () => {
-    //             const newPosition = editor.selection.active;
-    //             const updatedLineText = editor.document.lineAt(newPosition.line).text.trim();
-
-    //             // If line hasn't changed, don't request again
-    //             if (updatedLineText === lastLineContent) return;
-    //             lastLineContent = updatedLineText;
-
-    //             const textUptoCursor = editor.document.getText(
-    //                 new vscode.Range(new vscode.Position(0, 0), newPosition)
-    //             );
-
-    //             const suggestion = await getGhostCompletion(textUptoCursor);
-    //             if (editor === vscode.window.activeTextEditor && suggestion) {
-    //                 currentSuggestion = suggestion;
-    //                 showSuggestion(editor, currentSuggestion);
-    //             } else if (editor === vscode.window.activeTextEditor) {
-    //                 clearSuggestion(editor);
-    //             }
-    //         }, 400); // debounce delay
-    //     })
-    // );
-
-
     // Function to handle fill in the middle
-    // async function getMiddleFill(text: string): Promise<string> { 
-    //     try { 
-    //         updateStatusBar("Generating middle fill...");
+    async function getMiddleFill(text: string): Promise<string> { 
+        try { 
+            updateStatusBar("Generating middle fill...");
             
-    //         const response = await fetch('http://127.0.0.1:5000/fill_in_the_middle', { 
-    //             method: 'POST', 
-    //             headers: { 'Content-Type': 'application/json' }, 
-    //             body: JSON.stringify({ text }),
-    //         });
+            const response = await fetch('http://127.0.0.1:5000/fill_in_the_middle', { 
+                method: 'POST', 
+                headers: { 'Content-Type': 'application/json' }, 
+                body: JSON.stringify({ text }),
+            });
             
-    //         if (!response.ok) {
-    //             throw new Error(`HTTP error! status: ${response.status}`);
-    //         }
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
             
-    //         const data = await response.json();
+            const data = await response.json();
             
-    //         if (data.error) {
-    //             throw new Error(data.error);
-    //         }
+            if (data.error) {
+                throw new Error(data.error);
+            }
             
-    //         return data.completion ?? '';
-    //     } catch (error) {
-    //         if (error instanceof Error) {
-    //             vscode.window.showErrorMessage(`Fill-in-the-middle error: ${error.message}`);
-    //             console.error("Fill-in-the-middle error:", error.message);
-    //         } else {
-    //             console.error("Unknown fill-in-the-middle error:", error);
-    //         }
-    //         return '';
-    //     } finally {
-    //         hideStatusBar();
-    //     }
-    // }
+            return data.completion ?? '';
+        } catch (error) {
+            if (error instanceof Error) {
+                vscode.window.showErrorMessage(`Fill-in-the-middle error: ${error.message}`);
+                console.error("Fill-in-the-middle error:", error.message);
+            } else {
+                console.error("Unknown fill-in-the-middle error:", error);
+            }
+            return '';
+        } finally {
+            hideStatusBar();
+        }
+    }
 }
 
 export function deactivate() {}

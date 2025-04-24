@@ -163,8 +163,6 @@ def hf_complete():
             )
             full_output = tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-            # Trim input if echoed back
-            #suggestion = full_output[len(input_text):].strip() if full_output.startswith(input_text) else full_output
             # Remove echoed input
             if full_output.startswith(input_text):
                 suggestion = full_output[len(input_text):]

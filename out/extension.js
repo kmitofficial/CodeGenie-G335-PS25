@@ -1,6 +1,4 @@
 "use strict";
-// import * as vscode from 'vscode';
-// import { WebviewPanel } from './webviewPanel';
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -40,13 +38,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = activate;
 exports.deactivate = deactivate;
-// export function activate(context: vscode.ExtensionContext) {
-//     let disposable = vscode.commands.registerCommand('code-genie.start', () => {
-//         WebviewPanel.createOrShow(context.extensionUri);
-//     });
-//     context.subscriptions.push(disposable);
-// }
-// export function deactivate() {}
 const vscode = __importStar(require("vscode"));
 const cross_fetch_1 = __importDefault(require("cross-fetch"));
 const webviewPanel_1 = require("./webviewPanel");

@@ -172,3 +172,5 @@ cython_debug/
 .pypirc
 backend/Deepseek/
 backend/Deepseek-Instruct
+
+out/

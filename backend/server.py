@@ -238,6 +238,54 @@ def fill_in_the_middle():
 
     except Exception as e:
         return error_response(f"Error in /fill_in_the_middle: {str(e)}", 500)
+# Endpoint 5: optimize
+@app.route('/optimize', methods=['POST'])
+def optimize():
+    try:
+        if not request.is_json:
+            return jsonify({'error': 'Invalid content type. Expected application/json'}), 400
+
+        data = request.get_json()
+        input_text = data.get("text", "").strip()
+        if not input_text:
+            return jsonify({'error': 'Empty input text'}), 400
+
+        logger.info(f"Processing optimization request with input length: {len(input_text)}")
+
+        # Prepare prompt for the model to generate optimized code
+        prompt = (
+            "Optimize the following code to improve its time and space complexity. "
+            "Use appropriate data structures and algorithms while ensuring the functionality remains the same.\n"
+            "Do not include any test cases, only provide the optimized code.\n\n"
+            f"{input_text}\n\n# Optimized Code:\n"
+        )
+        with torch.no_grad():
+            inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+            outputs = model.generate(
+                **inputs,
+                max_new_tokens=600,
+                temperature=0.7,
+                top_p=0.9,
+                do_sample=False,
+                pad_token_id=tokenizer.eos_token_id
+            )
+            completion = tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
+            if "# Optimized Code:" in completion:
+                code_block = completion.split("# Optimized Code:")[1].strip()
+                code_lines = code_block.splitlines()
+                func_lines = []
+                for line in code_lines:
+                    if line.strip().startswith("print(") or line.strip().startswith("# Test Cases"):
+                        break
+                    func_lines.append(line)
+                completion = "\n".join(func_lines).strip()
+
+        logger.info(f"Generated optimized code of length: {len(completion)}")
+        return jsonify({'completion': completion})
+
+    except Exception as e:
+        logger.exception("Error during optimization")
+        return jsonify({'error': str(e)}), 500
 
 # Add health check endpoint
 @app.route("/health", methods=["GET"])

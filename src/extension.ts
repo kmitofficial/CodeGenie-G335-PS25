@@ -47,6 +47,86 @@ export function activate(context: vscode.ExtensionContext) {
         }
     });
 
+    // Command to optimize code
+    vscode.commands.registerCommand('codegenie.optimize', async () => {
+        const editor = vscode.window.activeTextEditor;
+        if (!editor) {
+            vscode.window.showErrorMessage('No active text editor found');
+            return;
+        }
+    
+        try {
+            // Show progress notification
+            await vscode.window.withProgress({
+                location: vscode.ProgressLocation.Notification,
+                title: "Optimizing your code...",
+                cancellable: false
+            }, async (progress) => {
+                progress.report({ message: "Analyzing code..." });
+    
+                const originalCode = editor.document.getText();
+    
+                // Making a POST request using fetch
+                const response = await fetch('http://127.0.0.1:5000/optimize', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        text: originalCode,
+                        type: 'optimize'
+                    })
+                });
+    
+                if (!response.ok) {
+                    vscode.window.showErrorMessage(`Failed to optimize code: ${response.statusText}`);
+                    return;
+                }
+    
+                const data = await response.json();
+                const optimizedCode = data.completion;
+    
+                if (!optimizedCode) {
+                    vscode.window.showErrorMessage('No optimized code returned from the server');
+                    return;
+                }
+    
+                progress.report({ message: "Optimization complete" });
+    
+                // Show apply confirmation
+                const selection = await vscode.window.showInformationMessage(
+                    "Code optimization complete. Apply changes?",
+                    { modal: true },
+                    "Apply", "Cancel"
+                );
+    
+                if (selection === "Apply") {
+                    progress.report({ message: "Applying changes..." });
+    
+                    // Apply the optimized code
+                    await editor.edit((editBuilder) => {
+                        const fullRange = new vscode.Range(
+                            editor.document.positionAt(0),
+                            editor.document.positionAt(originalCode.length)
+                        );
+                        editBuilder.replace(fullRange, optimizedCode);
+                    });
+    
+                    vscode.window.showInformationMessage("Optimized code applied successfully!");
+                }
+            });
+        } catch (error) {
+            if (error instanceof Error) {
+                vscode.window.showErrorMessage(`Failed to optimize code: ${error.message}`);
+            } else {
+                vscode.window.showErrorMessage('Failed to optimize code: An unknown error occurred.');
+            }
+            console.error('Optimization error:', error);
+        }
+    });
+    
+    context.subscriptions.push(startDisposable, completeDisposable);
+
     // Command for filling in the middle
     let fillMiddleDisposable = vscode.commands.registerCommand('code-genie.fillInTheMiddle', async () => {
         const editor = vscode.window.activeTextEditor;

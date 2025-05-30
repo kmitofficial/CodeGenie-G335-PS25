@@ -10,6 +10,7 @@ __pycache__/
 
 # Ignore backend build/large model folders
 backend/Deepseek/
+<<<<<<< HEAD
 backend/Deepseek-Instruct/
 backend/api.py
 
@@ -37,3 +38,8 @@ extension-ngrok/dist/
 # OS-generated files
 .DS_Store
 Thumbs.db
+=======
+backend/Deepseek-Instruct
+
+out/
+>>>>>>> fa39fed5b23f9520c8179dc89602f54d4752a722

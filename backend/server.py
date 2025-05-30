@@ -10,7 +10,7 @@ import pyngrok.ngrok as ngrok
 
 # Setup Flask and CORS
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app)
 
 # Setup Logging
 logging.basicConfig(level=logging.INFO)
@@ -75,6 +75,32 @@ def connection_info():
 # Endpoint 1: /generate (uses 'prompt') - NO LANGUAGE CONTEXT ADDED
 chat_history = []
 
+# Initialize model and tokenizer with proper error handling
+try:
+    logger.info(f"Loading tokenizer and model from {MODEL_PATH}...")
+    tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH, trust_remote_code=True)
+    model = AutoModelForCausalLM.from_pretrained(MODEL_PATH, trust_remote_code=True)
+    model.to(device)
+    model.eval()
+    logger.info(f"Model loaded successfully on {device}")
+except Exception as e:
+    logger.error(f"Failed to load model: {str(e)}")
+    # We'll handle this in a more graceful way instead of raising
+    model = None
+    tokenizer = None
+
+# Helper function to ensure model is loaded
+def ensure_model():
+    if model is None or tokenizer is None:
+        return False, {"error": "Model not properly initialized"}, 503
+    return True, None, None
+
+# Standardized error response function
+def error_response(message, status_code=400):
+    logger.error(message)
+    return jsonify({"error": message}), status_code
+
+# Endpoint 1: /generate (uses 'prompt')
 @app.route('/generate', methods=['POST'])
 def generate():
     try:
@@ -147,6 +173,7 @@ def generate():
         if len(chat_history) > 10:  # Keep only last 10 exchanges
             chat_history.pop(0)
 
+        logger.info(f"Generated response of length: {len(response_text)}")
         return jsonify({"response": response_text})
 
     except Exception as e:

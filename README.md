@@ -29,7 +29,7 @@ Welcome to **CodeGenie**, an intelligent **VS Code extension** that brings the p
 ![Architecture Diagram](images/ArchitectureDiagram.png)
 
 # 🧠 WorkFlow
-![Workflow](images/WorkFlow.png)
+![Workflow](images/Workflow.png)
 # 📖 Brief Explanation of the Reference Research Papers  
 
 ### 🔬 DeepSeek-Coder: Open-Source Large Language Models for Code Intelligence  

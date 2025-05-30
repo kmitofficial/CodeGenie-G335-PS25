@@ -13,7 +13,11 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": ["onStartupFinished"],
+  "activationEvents": [
+    "onStartupFinished",
+    "onStartupFinished",
+    "onCommand:codegenie.optimize"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
@@ -32,6 +36,10 @@
       {
         "command": "code-genie.fillInTheMiddle",
         "title": "Fill Code Gaps with CodeGenie"
+      },
+      {
+        "command": "codegenie.optimize",
+        "title": "Optimize"
       }
     ],
     "keybindings": [
@@ -49,6 +57,11 @@
         "command": "code-genie.fillInTheMiddle",
         "key": "ctrl+alt+8",
         "when": "editorTextFocus"
+      },
+      {
+        "command": "codegenie.optimize",
+        "key": "ctrl+shift+o",
+        "when": "editorTextFocus"
       }
     ]
   },
@@ -65,7 +78,7 @@
     "@types/istanbul-lib-coverage": "^2.0.6",
     "@types/json-schema": "^7.0.15",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^20.17.24",
+    "@types/node": "^20.17.46",
     "@types/vscode": "^1.98.0",
     "@typescript-eslint/eslint-plugin": "^8.22.0",
     "@typescript-eslint/parser": "^8.22.0",

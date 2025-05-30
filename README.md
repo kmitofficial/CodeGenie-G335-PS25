@@ -29,7 +29,7 @@ Welcome to **CodeGenie**, an intelligent **VS Code extension** that brings the p
 ![Architecture Diagram](images/ArchitectureDiagram.png)
 
 # 🧠 WorkFlow
-![Workflow](images/Workflow.png)
+![Workflow](images/WorkFlow.png)
 # 📖 Brief Explanation of the Reference Research Papers  
 
 ### 🔬 DeepSeek-Coder: Open-Source Large Language Models for Code Intelligence  
@@ -67,26 +67,18 @@ DeepSeek-Coder is released under a **permissive open-source license**, allowing 
 - **requirements.txt** -Initially install all the requirements from requirements.txt using the command pip install requirements.txt
 - **download_model.sh** -Refer to the scripts/download_model.sh file to ensure the download of Deepseek Instruct 1.3b instruct model.
 
-### Contributors
+## 👥 Contributors Overview
 
-- **Vishesh Gupta** : https://github.com/gupvishesh
-- **G Shruthi** : https://github.com/Shruthi280
-- **MKN Sai Varun** : https://github.com/MKN-Sai-Varun
-- **Kallem Preetham Reddy** : https://github.com/K-Preetham-Reddy
-- **Palak Jain** : https://github.com/Palakjain1234
-- **Patel Sharanya** : https://github.com/PatelSharanya
-- **Pranav Kasanagottu** : https://github.com/PranavKasanagottu
+| Name                   | GitHub Profile                                    | Milestone 1 Video                                           | Milestone 2 Video                                           | PPT Link                                              |
+|------------------------|---------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------|
+| Kallem Preetham Reddy | [K-Preetham-Reddy](https://github.com/K-Preetham-Reddy) | [Watch](https://www.youtube.com/watch?v=-OCLX3o41y0)        | [Watch](https://www.youtube.com/watch?v=hVD1DLjhYbA)        | [Download from ZIP](<./docs.zip>)                     |
+| Vishesh Gupta         | [gupvishesh](https://github.com/gupvishesh)       | [Watch](https://youtu.be/oYhpkxAc-kk?si=VOfd-vNPcvayipcp)   | [Watch](https://youtu.be/qfQvlAPucFQ?si=TxjmFHuLfITIvqRA)   | [Download from ZIP](<./docs.zip>)                     |
+| G Shruthi             | [Shruthi280](https://github.com/Shruthi280)       | [Watch](https://youtu.be/TrgejCfHIYM)                       | [Watch](https://youtu.be/oybMNiyJBPY?si=bOqJ0DYzOvPlLwCf)   | [Download from ZIP](<./docs.zip>)                     |
+| MKN Sai Varun         | [MKN-Sai-Varun](https://github.com/MKN-Sai-Varun) | [Watch](https://youtu.be/5o33Pr5BzqI?si=QGFA3ZaWLsBPTrDi)   | [Watch](https://youtu.be/Q3nBlNJ5UE8?si=W3ZahXXI0P42kn1l)                       | [Download from ZIP](<./docs.zip>)                     |
+| Palak Jain            | [Palakjain1234](https://github.com/Palakjain1234) | [Watch](https://youtu.be/kSF9GxOHq9w?si=ig1mN9SizxQTVeCt)   | [Watch](https://youtu.be/rQvynFVxXBo?si=ba3N-jQ-v2J-Ucy4)   | [Download from ZIP](<./docs.zip>)                     |
+| Patel Sharanya        | [PatelSharanya](https://github.com/PatelSharanya) | [Watch](https://www.youtube.com/watch?v=MSq8f-T1dxw)        | [Watch](https://youtu.be/W9APGHYzkiA?si=QpCym8lWXqeqyGLB)   | [Download from ZIP](<./docs.zip>)                     |
+| Pranav Kasanagottu    | [PranavKasanagottu](https://github.com/PranavKasanagottu) | [Watch](https://www.youtube.com/watch?v=bbtxZsi9YKw)        | [Watch](https://youtu.be/fv_47feubUM)                       | [Download from ZIP](<./docs.zip>)                     |
 
-### Reference Videos
-
-- **Vishesh Gupta** : https://youtu.be/oYhpkxAc-kk?si=VOfd-vNPcvayipcp
-- **G Shruthi** : https://youtu.be/TrgejCfHIYM
-- **MKN Sai Varun** : https://youtu.be/5o33Pr5BzqI?si=QGFA3ZaWLsBPTrDi
-- **Kallem Preetham Reddy** : https://www.youtube.com/watch?v=-OCLX3o41y0
-- **Palak Jain** : https://youtu.be/kSF9GxOHq9w?si=ig1mN9SizxQTVeCt
-- **Patel Sharanya** : https://www.youtube.com/watch?v=MSq8f-T1dxw
-- **Pranav Kasanagottu** : https://www.youtube.com/watch?v=bbtxZsi9YKw
 
 ---
-
 🔥 Get ready to build the future of **AI-powered development** with **CodeGenie**! 🚀  

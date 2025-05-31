@@ -67,26 +67,20 @@ DeepSeek-Coder is released under a **permissive open-source license**, allowing 
 - **requirements.txt** -Initially install all the requirements from requirements.txt using the command pip install requirements.txt
 - **download_model.sh** -Refer to the scripts/download_model.sh file to ensure the download of Deepseek Instruct 1.3b instruct model.
 
-### Contributors
+## 👥 Contributors Overview
 
-- **Vishesh Gupta** : https://github.com/gupvishesh
-- **G Shruthi** : https://github.com/Shruthi280
-- **MKN Sai Varun** : https://github.com/MKN-Sai-Varun
-- **Kallem Preetham Reddy** : https://github.com/K-Preetham-Reddy
-- **Palak Jain** : https://github.com/Palakjain1234
-- **Patel Sharanya** : https://github.com/PatelSharanya
-- **Pranav Kasanagottu** : https://github.com/PranavKasanagottu
+## 👥 Contributors Overview
 
-### Reference Videos
+| Name                   | GitHub Profile                                    | Milestone 1 Video                                           | Milestone 2 Video                                           | PPT Link                                                    |
+|------------------------|---------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|
+| Kallem Preetham Reddy | [K-Preetham-Reddy](https://github.com/K-Preetham-Reddy) | [Watch](https://www.youtube.com/watch?v=-OCLX3o41y0)        | [Watch](https://www.youtube.com/watch?v=hVD1DLjhYbA)        | [Download](<./docs/Preetham Reddy.pptx>)                   |
+| Vishesh Gupta         | [gupvishesh](https://github.com/gupvishesh)       | [Watch](https://youtu.be/oYhpkxAc-kk?si=VOfd-vNPcvayipcp)   | [Watch](https://youtu.be/qfQvlAPucFQ?si=TxjmFHuLfITIvqRA)   | [Download](<./docs/Vishesh Gupta.pptx>)                    |
+| G Shruthi             | [Shruthi280](https://github.com/Shruthi280)       | [Watch](https://youtu.be/TrgejCfHIYM)                       | [Watch](https://youtu.be/oybMNiyJBPY?si=bOqJ0DYzOvPlLwCf)   | [Download](<./docs/G Shruthi.pptx>)                        |
+| MKN Sai Varun         | [MKN-Sai-Varun](https://github.com/MKN-Sai-Varun) | [Watch](https://youtu.be/5o33Pr5BzqI?si=QGFA3ZaWLsBPTrDi)   | [Watch](https://youtu.be/F1fAExhUPmc)                       | [Download](<./docs/MKN Sai Varun.pptx>)                    |
+| Palak Jain            | [Palakjain1234](https://github.com/Palakjain1234) | [Watch](https://youtu.be/kSF9GxOHq9w?si=ig1mN9SizxQTVeCt)   | [Watch](https://youtu.be/rQvynFVxXBo?si=ba3N-jQ-v2J-Ucy4)   | [Download](<./docs/Palak Jain.pptx>)                       |
+| Patel Sharanya        | [PatelSharanya](https://github.com/PatelSharanya) | [Watch](https://www.youtube.com/watch?v=MSq8f-T1dxw)        | [Watch](https://youtu.be/W9APGHYzkiA?si=QpCym8lWXqeqyGLB)   | [Download](<./docs/Patel Sharanya.pptx>)                   |
+| Pranav Kasanagottu    | [PranavKasanagottu](https://github.com/PranavKasanagottu) | [Watch](https://www.youtube.com/watch?v=bbtxZsi9YKw)        | [Watch](https://youtu.be/fv_47feubUM)                       | [Download](<./docs/Pranav Kasanagottu.pptx>)               |
 
-- **Vishesh Gupta** : https://youtu.be/oYhpkxAc-kk?si=VOfd-vNPcvayipcp
-- **G Shruthi** : https://youtu.be/TrgejCfHIYM
-- **MKN Sai Varun** : https://youtu.be/5o33Pr5BzqI?si=QGFA3ZaWLsBPTrDi
-- **Kallem Preetham Reddy** : https://www.youtube.com/watch?v=-OCLX3o41y0
-- **Palak Jain** : https://youtu.be/kSF9GxOHq9w?si=ig1mN9SizxQTVeCt
-- **Patel Sharanya** : https://www.youtube.com/watch?v=MSq8f-T1dxw
-- **Pranav Kasanagottu** : https://www.youtube.com/watch?v=bbtxZsi9YKw
 
 ---
-
 🔥 Get ready to build the future of **AI-powered development** with **CodeGenie**! 🚀  

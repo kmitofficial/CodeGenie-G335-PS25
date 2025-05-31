@@ -69,15 +69,17 @@ DeepSeek-Coder is released under a **permissive open-source license**, allowing 
 
 ## 👥 Contributors Overview
 
-| Name                   | GitHub Profile                                    | Milestone 1 Video                                           | Milestone 2 Video                                           | PPT Link                                              |
-|------------------------|---------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------|
-| Kallem Preetham Reddy | [K-Preetham-Reddy](https://github.com/K-Preetham-Reddy) | [Watch](https://www.youtube.com/watch?v=-OCLX3o41y0)        | [Watch](https://www.youtube.com/watch?v=hVD1DLjhYbA)        | [Download from ZIP](<./docs.zip>)                     |
-| Vishesh Gupta         | [gupvishesh](https://github.com/gupvishesh)       | [Watch](https://youtu.be/oYhpkxAc-kk?si=VOfd-vNPcvayipcp)   | [Watch](https://youtu.be/qfQvlAPucFQ?si=TxjmFHuLfITIvqRA)   | [Download from ZIP](<./docs.zip>)                     |
-| G Shruthi             | [Shruthi280](https://github.com/Shruthi280)       | [Watch](https://youtu.be/TrgejCfHIYM)                       | [Watch](https://youtu.be/oybMNiyJBPY?si=bOqJ0DYzOvPlLwCf)   | [Download from ZIP](<./docs.zip>)                     |
-| MKN Sai Varun         | [MKN-Sai-Varun](https://github.com/MKN-Sai-Varun) | [Watch](https://youtu.be/5o33Pr5BzqI?si=QGFA3ZaWLsBPTrDi)   | [Watch](https://youtu.be/Q3nBlNJ5UE8?si=W3ZahXXI0P42kn1l)                       | [Download from ZIP](<./docs.zip>)                     |
-| Palak Jain            | [Palakjain1234](https://github.com/Palakjain1234) | [Watch](https://youtu.be/kSF9GxOHq9w?si=ig1mN9SizxQTVeCt)   | [Watch](https://youtu.be/rQvynFVxXBo?si=ba3N-jQ-v2J-Ucy4)   | [Download from ZIP](<./docs.zip>)                     |
-| Patel Sharanya        | [PatelSharanya](https://github.com/PatelSharanya) | [Watch](https://www.youtube.com/watch?v=MSq8f-T1dxw)        | [Watch](https://youtu.be/W9APGHYzkiA?si=QpCym8lWXqeqyGLB)   | [Download from ZIP](<./docs.zip>)                     |
-| Pranav Kasanagottu    | [PranavKasanagottu](https://github.com/PranavKasanagottu) | [Watch](https://www.youtube.com/watch?v=bbtxZsi9YKw)        | [Watch](https://youtu.be/fv_47feubUM)                       | [Download from ZIP](<./docs.zip>)                     |
+## 👥 Contributors Overview
+
+| Name                   | GitHub Profile                                    | Milestone 1 Video                                           | Milestone 2 Video                                           | PPT Link                                                    |
+|------------------------|---------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|-------------------------------------------------------------|
+| Kallem Preetham Reddy | [K-Preetham-Reddy](https://github.com/K-Preetham-Reddy) | [Watch](https://www.youtube.com/watch?v=-OCLX3o41y0)        | [Watch](https://www.youtube.com/watch?v=hVD1DLjhYbA)        | [Download](<./docs/Preetham Reddy.pptx>)                   |
+| Vishesh Gupta         | [gupvishesh](https://github.com/gupvishesh)       | [Watch](https://youtu.be/oYhpkxAc-kk?si=VOfd-vNPcvayipcp)   | [Watch](https://youtu.be/qfQvlAPucFQ?si=TxjmFHuLfITIvqRA)   | [Download](<./docs/Vishesh Gupta.pptx>)                    |
+| G Shruthi             | [Shruthi280](https://github.com/Shruthi280)       | [Watch](https://youtu.be/TrgejCfHIYM)                       | [Watch](https://youtu.be/oybMNiyJBPY?si=bOqJ0DYzOvPlLwCf)   | [Download](<./docs/G Shruthi.pptx>)                        |
+| MKN Sai Varun         | [MKN-Sai-Varun](https://github.com/MKN-Sai-Varun) | [Watch](https://youtu.be/5o33Pr5BzqI?si=QGFA3ZaWLsBPTrDi)   | [Watch](https://youtu.be/F1fAExhUPmc)                       | [Download](<./docs/MKN Sai Varun.pptx>)                    |
+| Palak Jain            | [Palakjain1234](https://github.com/Palakjain1234) | [Watch](https://youtu.be/kSF9GxOHq9w?si=ig1mN9SizxQTVeCt)   | [Watch](https://youtu.be/rQvynFVxXBo?si=ba3N-jQ-v2J-Ucy4)   | [Download](<./docs/Palak Jain.pptx>)                       |
+| Patel Sharanya        | [PatelSharanya](https://github.com/PatelSharanya) | [Watch](https://www.youtube.com/watch?v=MSq8f-T1dxw)        | [Watch](https://youtu.be/W9APGHYzkiA?si=QpCym8lWXqeqyGLB)   | [Download](<./docs/Patel Sharanya.pptx>)                   |
+| Pranav Kasanagottu    | [PranavKasanagottu](https://github.com/PranavKasanagottu) | [Watch](https://www.youtube.com/watch?v=bbtxZsi9YKw)        | [Watch](https://youtu.be/fv_47feubUM)                       | [Download](<./docs/Pranav Kasanagottu.pptx>)               |
 
 
 ---
